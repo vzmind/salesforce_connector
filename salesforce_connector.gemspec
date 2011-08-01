@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Vzmind"]
   s.email       = ["vzmind@gmail.com"]
   s.homepage    = "http://github.com/vzmind"
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = "Connect your Rails 3 app to a Salesforce account"
+  s.description = "Use Omniauth OAuth authentification strategy and REST API with httparty"
 
   s.rubyforge_project = "salesforce_connector"
 
