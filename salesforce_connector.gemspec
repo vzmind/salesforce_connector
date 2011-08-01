@@ -15,8 +15,8 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = ">= 1.3.6"
 
-  s.add_dependency("omniauth", "~> 2.0.4")
-  s.add_dependency("httpparty","~> 0.7.7")
+  s.add_dependency("omniauth", "~> 0.2.4")
+  s.add_dependency("httparty","~> 0.7.7")
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
