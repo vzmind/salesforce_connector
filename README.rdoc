@@ -2,14 +2,42 @@
 
 Rails gem to connect an application to Salesforce accounts.
 
-== Install
+== Install in your Gemfile
 
-  gem install salesforce_connector
+  gem 'salesforce_connector'
 
+== Dependencies
+
+Salesforce Connector is based on HTTParty to access Salesforce API and on OmniAuth to retrieve OAuth2 tokens.
 
 == Usage
 
+In your initiliazer (Rails3) or config.ru file (Sinatra or Padrino) add the 4 following elements
 
+Add the Forcedotcom OAuth Strategy 
+  module OmniAuth
+    module Strategies
+      #tell omniauth to load our strategy
+      autoload :Forcedotcom, '???'
+    end
+  end
+
+Define the current host:
+  OmniAuth.config.full_host = 'https://localhost:3000'
+
+Configure the Salesforce remote server URL and version
+  ENV['sfdc_instance_url'] = "https://eu1.salesforce.com"
+  ENV['sfdc_api_version']  = "21.0"
+
+Load the Forcedotcom OAuth strategy
+  use OmniAuth::Builder do
+    provider :forcedotcom, '3MVG9PhR6g6B7ps6in8a_o8S1IvXGM41y725iSJXhSWZm5GJ0gZgvuQkLdT7YWOLciMWxn5yDglwAcjkGzcal', '2539130913145733702'
+  end
+
+== Note
+
+Salesforce OAuth only implement https authentication. 
+Be sure that your server (requester) is also running behing https.
 
 == License
 
