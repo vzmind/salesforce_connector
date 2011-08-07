@@ -11,8 +11,6 @@ module OmniAuth
     class Forcedotcom < OAuth2
       # Initialize the middleware
       #
-      # @option options [Boolean, true] :sign_in When true, use a sign-in flow instead of the authorization flow.
-      # @option options [Boolean, false] :mobile When true, use the mobile sign-in interface.
       def initialize(app, client_id = nil, client_secret = nil, options = {}, &block)
         client_options = {
           :site => "https://login.salesforce.com",
