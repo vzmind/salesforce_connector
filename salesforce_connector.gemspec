@@ -17,6 +17,10 @@ Gem::Specification.new do |s|
 
   s.add_dependency("omniauth", "~> 0.2.4")
   s.add_dependency("httparty","~> 0.7.7")
+  s.add_development_dependency "turn"
+  s.add_development_dependency "bundler"
+  s.add_development_dependency "minitest"
+  
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
