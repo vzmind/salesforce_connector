@@ -1,9 +1,6 @@
 module SalesforceConnector
 
   class Account < OauthObject
-    #doesn't seem to pick up env variable correctly if I set it here
-    #headers 'Authorization' => "OAuth #{ENV['sfdc_token']}"
-
     def self.get_first_hundred
       Account.query('SELECT Name, Id from Account LIMIT 100')
     end
